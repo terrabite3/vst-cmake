@@ -84,7 +84,7 @@ if(APPLE)
   )
 elseif(WIN32)
   install(TARGETS again
-    DESTINATION "/Program Files (x86)/Common Files/VST3/"
+    DESTINATION "C:/Program Files/Common Files/VST2/"
   )
 elseif(UNIX AND NOT APPLE) #Linux
   install(TARGETS again
