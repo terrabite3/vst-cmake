@@ -21,8 +21,21 @@ endif()
 #################
 # Build plug-in #
 #################
+# set(VST_BUILD "vstsdk369_01_03_2018_build_132")
 
-set(VSTSDK_PATH "/Applications/JUCE/VST3_SDK/" CACHE PATH "Path to VST SDK")
+# file(MAKE_DIRECTORY VST_SDK)
+
+# if(NOT EXISTS VST_SDK)
+
+#   execute_process(
+#     COMMAND wget https://download.steinberg.net/sdk_downloads/${VST_BUILD}.zip
+#     COMMAND unzip ${VST_BUILD}.zip
+#     WORKING_DIRECTORY VST_SDK
+#   )
+
+# endif()
+
+set(VSTSDK_PATH "VST_SDK/VST2_SDK" CACHE PATH "Path to VST SDK")
 set(VSTSDK_INCLUDE_DIR ${VSTSDK_PATH})
 set(VSTSDK_PLUGIN_SOURCE
   ${VSTSDK_PATH}/public.sdk/source/vst2.x/audioeffectx.cpp
@@ -36,7 +49,7 @@ set(AGAIN_SOURCE
     src/again.h
     src/againmain.cpp
     #resources/again.rc
-    #resources/vstplug.def
+    resources/vstplug.def
     ${VSTSDK_PLUGIN_SOURCE}
 )
 
